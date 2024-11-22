@@ -13,7 +13,7 @@ connectDB();
 // Middleware
 app.use(cors(
     {
-        origin: ["https://labor-data-management-system-api.vercel.app"],
+        origin: ["http://localhost:3000/"],
         methods: ["POST", "GET"],
         credentials: true
     }
