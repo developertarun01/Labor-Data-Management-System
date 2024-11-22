@@ -13,7 +13,7 @@ connectDB();
 // Middleware
 app.use(cors(
     {
-        origin: ["https://labor-data-management-system-api.vercel.app"],
+        origin: ["https://labor-data-management-system.vercel.app"],
         methods: ["POST", "GET"],
         credentials: true
     }
@@ -21,7 +21,7 @@ app.use(cors(
 app.use(bodyParser.json());
 
 // Routes
-app.use('/api', laborRoutes);
+app.use('/', laborRoutes);
 
 // Start server
 const PORT = process.env.PORT || 5000;

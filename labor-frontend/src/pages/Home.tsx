@@ -13,14 +13,14 @@ interface Labor {
 
 const Home: React.FC = () => {
     const [laborList, setLaborList] = useState<Labor[]>([]);
-    const [searchQuery, setSearchQuery] = useState("");
+    // const [searchQuery, setSearchQuery] = useState("");
     const [skillSearch, setSkillSearch] = useState<string>("");
     const [citySearch, setCitySearch] = useState<string>("");
 
     useEffect(() => {
         const fetchLabors = async () => {
             try {
-                const response = await fetch("https://labor-data-management-system-api.vercel.app"); // Adjust the URL if necessary
+                const response = await fetch("http://localhost:5000/"); // Adjust the URL if necessary
                 if (response.ok) {
                     const data = await response.json();
                     setLaborList(data);
@@ -66,7 +66,7 @@ const Home: React.FC = () => {
         console.log("Sending data to server:", newLabor); // Log the request data
 
         try {
-            const response = await fetch("https://labor-data-management-system-api.vercel.app", {
+            const response = await fetch("http://localhost:5000/", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(newLabor),
