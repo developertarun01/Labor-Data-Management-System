@@ -21,7 +21,7 @@ app.use(cors(
 app.use(bodyParser.json());
 
 // Routes
-app.use('/api', laborRoutes);
+app.use('/', laborRoutes);
 
 // Start server
 const PORT = process.env.PORT || 5000;
