@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
+const uri = "mongodb+srv://tarunbusinessmail:iJu1JBMxFPdAwXAi@laborhub.psssz.mongodb.net/?retryWrites=true&w=majority&appName=laborHub"
 
 const connectDB = async () => {
     try {
-        const conn = await mongoose.connect(process.env.MONGO_URI, {
+        const conn = await mongoose.connect(uri, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
         });
