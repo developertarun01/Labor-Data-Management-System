@@ -3,7 +3,7 @@ const router = express.Router();
 const Labor = require('../models/Labor');
 
 // Add a new labor
-router.post('/', async (req, res) => {
+router.post('/labors', async (req, res) => {
     try {
         const newLabor = new Labor(req.body);
         const savedLabor = await newLabor.save();
@@ -14,7 +14,7 @@ router.post('/', async (req, res) => {
 });
 
 // Fetch all labors
-router.get('/', async (req, res) => {
+router.get('/labors', async (req, res) => {
     try {
         const labors = await Labor.find();
         res.status(200).json(labors);
