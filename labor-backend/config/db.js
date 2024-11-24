@@ -1,26 +1,25 @@
 const mongoose = require('mongoose');
-require('dotenv').config();
-
-const uri = process.env.MONGODB_URI;
-let isConnected; // Track the connection state.
 
 const connectDB = async () => {
-    if (isConnected) {
-        console.log("Using existing database connection");
-        return;
+    const uri = process.env.MONGODB_URI;
+
+    if (!uri) {
+        console.error('MONGODB_URI is not defined');
+        process.exit(1);
     }
+
     try {
         const conn = await mongoose.connect(uri, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
+            serverSelectionTimeoutMS: 5000, // Add timeout for serverless environment
         });
-        isConnected = conn.connections[0].readyState;
         console.log(`MongoDB Connected: ${conn.connection.host}`);
     } catch (error) {
-        console.error(`Error: ${error.message}`);
+        console.error('MongoDB Connection Error:', error);
         process.exit(1);
     }
 };
 
-module.exports = connectDB;
 
+module.exports = connectDB;
