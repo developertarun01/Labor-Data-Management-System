@@ -20,9 +20,10 @@ const Home: React.FC = () => {
     useEffect(() => {
         const fetchLabors = async () => {
             try {
-                const response = await fetch("https://labor-data-management-system-api.vercel.app/"); // Adjust the URL if necessary
+                const response = await fetch("https://labor-data-management-system-api.vercel.app/");
                 if (response.ok) {
                     const data = await response.json();
+                    console.log("Fetched Data:", data); // Add this to debug
                     setLaborList(data);
                 } else {
                     console.error("Failed to fetch labors:", response.statusText);
@@ -31,9 +32,10 @@ const Home: React.FC = () => {
                 console.error("Error fetching labors:", error);
             }
         };
-
+    
         fetchLabors();
     }, []);
+    
 
     const [formData, setFormData] = useState<Labor>({
         name: "",
