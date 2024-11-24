@@ -49,9 +49,9 @@ const Header: React.FC = () => {
                         <li><a href="/" className="hover:underline">Home</a></li>
                         {/* <li><a href="/search" className="hover:underline">Search</a></li> */}
                         {/* <li><a href="/profile" className="hover:underline">Profile</a></li> */}
-                        <li><a className="hover:underline" onClick={translatePageToHindi}>Hindi</a></li>
-                        <li><a href="https://api.whatsapp.com/send/?phone=918630739687&text=I%20need%20help%20about%20FindWorker&type=phone_number&app_absent=0" className="hover:underline" target="_blank">Help</a></li>
-                        {/* <button
+                        {/* <li><a className="hover:underline" onClick={translatePageToHindi}>Hindi</a></li> */}
+                        <li><a href="https://api.whatsapp.com/send/?phone=918630739687&text=I%20need%20help%20about%20FindWorker&type=phone_number&app_absent=0" className="hover:underline" target="_blank" rel="noopener noreferrer">Help</a></li>
+                        <button
                             onClick={translatePageToHindi}
                             disabled={!isTranslateReady}
                             style={{
@@ -62,7 +62,7 @@ const Header: React.FC = () => {
                                 borderRadius: "4px",
                                 cursor: isTranslateReady ? "pointer" : "not-allowed",
                             }}
-                        ></button> */}
+                        ></button>
                     </ul>
                 </nav>
             </div>
