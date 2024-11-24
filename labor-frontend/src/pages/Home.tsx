@@ -20,9 +20,7 @@ const Home: React.FC = () => {
     useEffect(() => {
         const fetchLabors = async () => {
             try {
-                const response = await fetch("https://labor-data-management-system-api.vercel.app/", {
-                    mode: 'no-cors' // Add this temporarily for debugging
-                });
+                const response = await fetch("https://labor-data-management-system-api.vercel.app/");
                 if (response.ok) {
                     const data = await response.json();
                     setLaborList(data);
