@@ -14,7 +14,7 @@ app.use((req, res, next) => {
     next();
 });
 
-const response = await fetch("https://cors-anywhere.herokuapp.com/https://labor-data-management-system-api.vercel.app/");
+// const response = await fetch("https://cors-anywhere.herokuapp.com/https://labor-data-management-system-api.vercel.app/");
 
 // Connect to database
 connectDB();
@@ -23,7 +23,8 @@ connectDB();
 app.use(cors({
     origin: process.env.CLIENT_URL || "*",
     methods: ["POST", "GET"],
-    credentials: true
+    credentials: true,
+    // allowedHeaders: ["Content-Type"]
 }));
 
 app.use(bodyParser.json());
