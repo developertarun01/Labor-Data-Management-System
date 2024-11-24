@@ -46,7 +46,7 @@ const Header: React.FC = () => {
                 <h1 className="text-2xl font-bold">FindWorker</h1>
                 <nav>
                     <ul className="flex space-x-4">
-                        <li><a href="/" className="hover:underline">Home</a></li>
+                        {/* <li><a href="/" className="hover:underline">Home</a></li> */}
                         {/* <li><a href="/search" className="hover:underline">Search</a></li> */}
                         {/* <li><a href="/profile" className="hover:underline">Profile</a></li> */}
                         {/* <li><a className="hover:underline" onClick={translatePageToHindi}>Hindi</a></li> */}
