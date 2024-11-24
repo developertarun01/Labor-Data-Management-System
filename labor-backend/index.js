@@ -14,17 +14,14 @@ app.use((req, res, next) => {
     next();
 });
 
-// const response = await fetch("https://cors-anywhere.herokuapp.com/https://labor-data-management-system-api.vercel.app/");
-
 // Connect to database
 connectDB();
 
 // Middleware
 app.use(cors({
-    origin: process.env.CLIENT_URL || "*",
-    methods: ["POST", "GET"],
-    credentials: true,
-    // allowedHeaders: ["Content-Type"]
+    origin: "https://labor-data-management-system.vercel.app", // Your frontend domain
+    methods: ["GET", "POST"],
+    allowedHeaders: ["Content-Type"]
 }));
 
 app.use(bodyParser.json());
