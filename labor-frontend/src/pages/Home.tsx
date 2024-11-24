@@ -27,16 +27,16 @@ const Home: React.FC = () => {
                     const data = await response.json();
                     setLaborList(data);
                 } else {
-                    console.error("Failed to fetch labors:", response.statusText);
+                    // console.error("Failed to fetch labors:", response.statusText);
                 }
             } catch (error) {
                 console.error("Error fetching labors:", error);
             }
         };
-    
+
         fetchLabors();
     }, []);
-    
+
 
     const [formData, setFormData] = useState<Labor>({
         name: "",
