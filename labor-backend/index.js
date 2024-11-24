@@ -19,8 +19,9 @@ connectDB();
 
 // Middleware
 app.use(cors({
-    origin: "https://labor-data-management-system.vercel.app", // Your frontend domain
-    methods: ["GET", "POST"],
+    origin: process.env.CLIENT_URL || "*",
+    methods: ["POST", "GET"],
+    credentials: true,
     allowedHeaders: ["Content-Type"]
 }));
 
