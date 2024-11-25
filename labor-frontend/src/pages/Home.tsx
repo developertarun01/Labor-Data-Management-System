@@ -261,9 +261,9 @@ const Home: React.FC = () => {
                     </div>
                 </div>
 
-                <div className="container mx-auto p-6">
+                <div className="container mx-auto pr-6 pl-6 pb-6">
                     <section className="bg-white shadow-md rounded-lg p-6">
-                        <div className="mt-6">
+                        <div>
                             <h3 className="text-lg font-semibold text-gray-800 mb-2">Recently Added Worker:</h3>
                             <div
                                 className="max-h-64 overflow-y-auto border rounded-lg p-2 bg-gray-50"
