@@ -13,10 +13,10 @@ router.post('/', async (req, res) => {
     }
 });
 
-// Fetch all labors
+// Fetch all labors sorted from most recent to oldest
 router.get('/', async (req, res) => {
     try {
-        const labors = await Labor.find();
+        const labors = await Labor.find().sort({ createdAt: -1 }); // Sort by 'createdAt' in descending order
         res.status(200).json(labors);
     } catch (error) {
         res.status(500).json({ message: 'Error fetching labors', error: error.message });
